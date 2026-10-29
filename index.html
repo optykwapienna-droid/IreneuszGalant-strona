@@ -90,6 +90,8 @@ nav a.nav-cta:hover { background: var(--ink); color: var(--bg); }
 .card { position: relative; border: 1px solid color-mix(in srgb, var(--brass-soft) 45%, transparent); padding: 36px 34px 30px; display: grid; gap: 22px; background: color-mix(in srgb, var(--on-navy) 4%, transparent); }
 .card::before { content: ""; position: absolute; inset: 8px; border: 1px solid color-mix(in srgb, var(--brass-soft) 18%, transparent); pointer-events: none; }
 .card-name { display: grid; gap: 4px; }
+.card-id { display: flex; align-items: center; gap: 18px; }
+.avatar { width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; border: 1px solid var(--brass-soft); padding: 3px; background: transparent; }
 .card-name b { font-family: var(--display); font-weight: 500; font-size: 30px; line-height: 1.1; }
 .card-name span { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--brass-soft); }
 .card dl { margin: 0; display: grid; }
@@ -114,7 +116,7 @@ section.block.alt { background: var(--alt); }
 .sec-head p { color: var(--muted); }
 
 /* o mnie */
-.about { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); gap: 72px; align-items: center; }
+.about { display: grid; grid-template-columns: minmax(0, 1fr); }
 .portrait-wrap { position: relative; max-width: 100%; padding: 0 14px 14px 0; }
 .portrait-wrap::after { content: ""; position: absolute; inset: 14px 0 0 14px; border: 1px solid var(--brass); }
 .portrait { aspect-ratio: 4 / 5; max-width: 100%; background: var(--alt); border: 1px solid var(--line); display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); font-size: 14px; position: relative; z-index: 1; }
@@ -336,9 +338,9 @@ footer .wrap { padding-block: 32px; display: flex; justify-content: space-betwee
         </div>
       </div>
       <aside class="card" aria-label="Wizytówka">
-        <div class="card-name"><span>Optometrysta</span><b>mgr inż. Ireneusz Galant</b></div>
+        <div class="card-id"><img class="avatar" src="ireneusz-galant.jpg" width="240" height="240" alt="mgr inż. Ireneusz Galant, optometrysta we Wrocławiu"><div class="card-name"><span>Optometrysta</span><b>mgr inż. Ireneusz Galant</b></div></div>
         <dl>
-          <div><dt>Wykształcenie</dt><dd>Optyka biomedyczna, Politechnika Wrocławska; studia podyplomowe z optometrii</dd></div>
+          <div><dt>Wykształcenie</dt><dd><b>Optometrysta</b>, studia podyplomowe z optometrii; mgr inż. optyki biomedycznej, Politechnika Wrocławska</dd></div>
           <div><dt>Rejestr</dt><dd>RIZM 1500105792</dd></div>
           <div><dt>Gabinet</dt><dd>Optyk Galant, ul. Wapienna 20, 50-518 Wrocław</dd></div>
           <div><dt>Telefon</dt><dd><a href="tel:+48502144394">+48 502 144 394</a></dd></div>
@@ -358,7 +360,6 @@ footer .wrap { padding-block: 32px; display: flex; justify-content: space-betwee
 
   <section id="o-mnie" class="block" aria-labelledby="h-o-mnie">
     <div class="wrap about">
-      <div class="portrait-wrap"><img class="portrait photo" src="ireneusz-galant-optometrysta-wroclaw.jpg" width="860" height="1075" alt="mgr inż. Ireneusz Galant, optometrysta, w gabinecie Optyk Galant przy ul. Wapiennej 20 we Wrocławiu" loading="lazy"></div>
       <div class="about-text">
         <span class="eyebrow">O mnie</span>
         <h2 id="h-o-mnie" class="sr-only">O mnie</h2>
