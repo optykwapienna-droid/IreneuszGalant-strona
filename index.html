@@ -526,5 +526,14 @@ footer .wrap { padding-block: 32px; display: flex; justify-content: space-betwee
 </footer>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>
+  // Licznik odwiedzin w panelu gabinetu: jedno zgłoszenie na otwarcie strony, bez cookies i danych osobowych
+  try {
+    if (!sessionStorage.getItem("odwiedziny")) {
+      sessionStorage.setItem("odwiedziny", "1");
+      navigator.sendBeacon("https://wizyta.ireneuszgalant.pl/api/visit");
+    }
+  } catch (e) {}
+</script>
 </body>
 </html>
