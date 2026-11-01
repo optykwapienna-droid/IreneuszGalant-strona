@@ -530,6 +530,21 @@ footer .wrap { padding-block: 32px; display: flex; justify-content: space-betwee
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>
+  // Wejście z oznaczeniem (np. ?zrodlo=ads z reklamy) przekazujemy dalej do kalendarza,
+  // żeby w statystykach gabinetu zapis był przypisany do reklamy, a nie do „strona”.
+  try {
+    var zrodlo = new URLSearchParams(location.search).get("zrodlo");
+    if (zrodlo && /^[a-z0-9_-]{1,30}$/i.test(zrodlo)) {
+      document.querySelectorAll('a[href^="https://wizyta.ireneuszgalant.pl"], iframe[src^="https://wizyta.ireneuszgalant.pl"]').forEach(function (el) {
+        var attr = el.tagName === "IFRAME" ? "src" : "href";
+        var url = new URL(el.getAttribute(attr));
+        url.searchParams.set("zrodlo", zrodlo);
+        el.setAttribute(attr, url.toString());
+      });
+    }
+  } catch (e) {}
+</script>
+<script>
   // Licznik odwiedzin w panelu gabinetu: jedno zgłoszenie na otwarcie strony, bez cookies i danych osobowych
   try {
     if (!sessionStorage.getItem("odwiedziny")) {
